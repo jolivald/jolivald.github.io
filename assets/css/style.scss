@@ -1,15 +1,8 @@
 ---
 ---
 
-@import "{{ site.theme }}";
-
 @import "variables";
 
-// overwrite tactile theme colors
-a, h3 {
-  color: $primary;
-}
-a:hover {
-  text-decoration: underline;
-  color: adjust-color($color: $primary, $lightness: -10%);
-}
+@import "{{ site.theme }}";
+
+@import "main";

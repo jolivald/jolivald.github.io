@@ -1,5 +1,5 @@
 ---
-title: Home
+title: Homepage
 ---
 ## Welcome to GitHub Pages
 

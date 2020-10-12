@@ -1,0 +1,29 @@
+// overwrite tactile theme colors
+a, h3 {
+  color: $primary;
+}
+a:hover {
+  text-decoration: underline;
+  color: adjust-color($color: $primary, $lightness: -10%);
+}
+#main_content {
+  h2 {
+    //font-family: Chivo;
+  }
+  h3 {
+    color: #303030;
+  }
+}
+
+#header_menu {
+  ul {
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-evenly;
+    
+    li {
+      list-style-type: none;
+      padding: 0;
+    }
+  }
+}
