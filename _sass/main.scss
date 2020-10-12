@@ -18,12 +18,30 @@ a:hover {
 #header_menu {
   ul {
     display: flex;
-    flex-direction: row wrap;
-    justify-content: space-evenly;
-    
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
     li {
+      flex: 1 0 100%;
       list-style-type: none;
+      text-align: center;
+      vertical-align: middle;
+      height: 2em;
       padding: 0;
+      a {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 600px) {
+  #header_menu {
+    ul {
+      li {
+        flex: 1 0 auto;
+      }
     }
   }
 }
