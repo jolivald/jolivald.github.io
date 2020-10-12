@@ -1,0 +1,9 @@
+links:
+
+- label: Home
+  url: /index
+  icon: home
+
+- label: About me
+  url: /about
+  icon: perm_identity
