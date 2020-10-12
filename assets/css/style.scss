@@ -1,8 +1,19 @@
 ---
 ---
 
-@import "variables";
+$primary-color: #008900;
+$secondary-color: darken($primary-color, 10%);
 
-@import "{{ site.theme }}";
+@import "components/color-variables";
+@import "components/color-classes";
+@import "components/variables";
+@import "components/normalize";
 
-@import "main";
+@import "components/global";
+@import "components/icons-material-design";
+@import "components/grid";
+@import "components/navbar";
+@import "components/buttons";
+@import "components/sidenav";
+
+@import "portfolio";

@@ -1,0 +1,13 @@
+networks:
+
+- label: Github
+  url: https://github.com/jolivald
+  icon: code
+
+- label: LinkedIn
+  url: https://www.linkedin.com/in/jonathan-jolivald/
+  icon: link
+
+- label: Email
+  url: mailto:nospam@gmail.com
+  icon: email
