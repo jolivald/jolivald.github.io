@@ -1,0 +1,46 @@
+%f-box {
+  display: flex;
+  flex-wrap: nowrap;
+  &.wrap {
+    flex-wrap: wrap;
+  }
+  & > * {
+    @extend %f-box-child;
+  }
+}
+
+%f-box-child {
+  flex: 1 0 fit-content;
+  &.fluid {
+    flex-basis: auto;
+  }
+  &.rigid {
+    flex-grow: 0;
+  }
+  @for $index from 1 to 13 {
+    &.col-#{$index} {
+      flex-basis: 100% * ($index / 12);
+    }
+  }
+}
+/*
+1x = 1
+4x = 0.3333
+6x = 0.5
+12x = 0.0833
+*/
+
+// ---8<---
+
+.h-box {
+  @extend %f-box;
+  flex-direction: row;
+  & > .sm12 {
+    flex-basis: 100%;
+  }
+}
+
+.v-box {
+  @extend %f-box;
+  flex-direction: column;
+}

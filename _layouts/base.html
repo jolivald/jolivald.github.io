@@ -14,50 +14,46 @@
   <![endif]-->
   <title>{{site.title}} - {{page.title}}</title>
 </head>
-<body>
-  <main class="container">
+<body class="v-box">
 
-    <header class="row">
+    <header class="page-header v-box">
+        <div id="banner" class="col s12">
+          <div class="row">
+              <div class="col s12 m6 l4 profile-picture">
+                <img
+                  src="{{ '/assets/images/profile.jpg' | relative_url }}"
+                  alt="Jonathan Jolivald profile picture"
+                />
+      
+              </div>
+              <div class="col s12 m6 l8 banner-title">
+                <h1>{{ site.title }}</h1> 
+                <h3 class="subtitle">{{ site.description }}</h3>
+              </div>
+          </div>
+        </div>
 
-      <div id="banner" class="col s12">
-        <div class="row">
-          <div class="col s12 m6 l4 profile-picture">
-            <img
-              src="{{ '/assets/images/profile.jpg' | relative_url }}"
-              alt="Jonathan Jolivald profile picture"
-            />
+        <nav id="menu" class="col s12">
+          <div class="nav-wrapper">
+            <a
+              href="#!"
+              class="sidenav-trigger brand-logo right hide-on-med-and-up"
+              data-target="slide-out"
+            >
+              <i class="material-icons">menu</i>
+            </a>  
+            <ul class="left hide-on-small-and-down">
+              {% for entry in site.data.menu.links %}
+                <li>
+                  <a href="{{ entry.url }}">
+                    {{ entry.label }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
   
           </div>
-          <div class="col s12 m6 l8 banner-title">
-            <h1>{{ site.title }}</h1> 
-            <h2>{{ site.description }}</h2>
-          </div>
-        </div>
-      </div>
-
-
-      <nav id="menu" class="col s12">
-        <div class="nav-wrapper">
-          <a
-            href="#!"
-            class="sidenav-trigger brand-logo right hide-on-med-and-up"
-            data-target="slide-out"
-          >
-            <i class="material-icons">menu</i>
-          </a>
-
-          <ul class="left hide-on-small-and-down">
-            {% for entry in site.data.menu.links %}
-              <li>
-                <a href="{{ entry.url }}">
-                  {{ entry.label }}
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-
-        </div>
-      </nav>
+        </nav>
 
       <ul id="slide-out" class="sidenav">
         <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
@@ -87,12 +83,15 @@
 
     </header>
 
-    <article>
+    <main id="content">
       <p>content here</p>
       <p>content here</p>
 
       <div class="fixed-action-btn">
-        <a class="btn-floating btn-large">
+        <a
+          class="btn-floating btn-large sidenav-trigger"
+          data-target="slide-out"
+        >
           <i class="large material-icons">share</i>
         </a>
         <ul>
@@ -106,12 +105,16 @@
         </ul>
       </div>
       
-    </article>
+    </main>
 
-    <footer>
-      <p>Copyright &copy;2020 Jonathan Jolivald - Released under the MIT license</p>
+    <footer class="page-footer">
+      <div class="container">
+        123
+      </div>
+      <div class="footer-copyright">
+        <p>Copyright &copy;2020 Jonathan Jolivald - Released under the MIT license</p>
+      </div>
     </footer>
-  </main>
 
 
   <script type="text/javascript" src="{{ '/assets/js/materialize.min.js' | relative_url }}"></script>
