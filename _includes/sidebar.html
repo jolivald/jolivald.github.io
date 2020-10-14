@@ -1,0 +1,34 @@
+<div id="sidedrawer" class="mui--no-user-select">
+
+  <img
+    src="{{ '/assets/images/profile.jpg' | relative_url }}"
+    class="profile-picture"
+    alt="profile picture"
+  />
+  <h1>Jonathan Jolivald</h1>
+  <h2 class="mui--text-subhead">Personal portfolio</h2>
+
+  <div class="mui-divider"></div>
+
+  <ul id="sidedrawer-menu" class="">
+    {% for entry in site.data.menu.links %}
+      <li>
+        <a href="{{ entry.url }}" class="mui-btn">
+          <i class="material-icons">{{ entry.icon }}</i>
+          {{ entry.label }}
+        </a>
+      </li>
+    {% endfor %}
+    <div class="mui-divider"></div>
+    {% for entry in site.data.social.networks %}
+      <li>
+        <a href="{{ entry.url }}" class="mui-btn">
+          <i class="material-icons">{{ entry.icon }}</i>
+          {{ entry.label }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+
+</div>

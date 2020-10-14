@@ -1,0 +1,15 @@
+<footer id="footer">
+  <div class="mui-container-fluid">
+    <div class="icons mui-row">
+    {% for entry in site.data.social.networks %}
+      <div class="mui-col-xs-4">
+        <a href="{{ entry.url }}" title="{{ entry.label }}" class="mui-btn mui-btn--primary">
+          <i class="material-icons">{{ entry.icon }}</i>
+        </a>
+      </div>
+    {% endfor %}
+    </div>
+    <p>Copyright &copy;2020 - Jonathan Jolivald<br/>
+    Released under MIT license</p>
+  </div>
+</footer>

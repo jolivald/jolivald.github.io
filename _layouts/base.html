@@ -4,122 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="{{ site.description }}">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | relative_url }}">
-  <link rel="stylesheet" type="text/css" href="{{ '/assets/css/print.css' | relative_url }}" media="print">
+  {% seo %}
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" type="text/css">
+  <link href="{{ '/assets/css/style.css' | relative_url }}" rel="stylesheet" type="text/css">
+  <link href="{{ '/assets/css/print.css' | relative_url }}" media="print" rel="stylesheet" type="text/css">
+  <link rel="icon" href="{{ '/assets/images/favicon/favicon-32x32.png' | relative_url }}">
+  <!--[if IE]>
+  <link rel="shortcut icon" href="{{ '/assets/images/favicon/favicon.ico' | relative_url }}">
+  <![endif]-->
+  <script src="{{ '/assets/js/mui.min.js' | relative_url }}" type="text/javascript"></script>
+  <script src="{{ '/assets/js/index.js' | relative_url }}" type="text/javascript"></script>
   <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  <title>{{site.title}} - {{page.title}}</title>
 </head>
-<body class="v-box">
+<body>
 
-    <header class="page-header v-box">
-        <div id="banner" class="col s12">
-          <div class="row">
-              <div class="col s12 m6 l4 profile-picture">
-                <img
-                  src="{{ '/assets/images/profile.jpg' | relative_url }}"
-                  alt="Jonathan Jolivald profile picture"
-                />
-      
-              </div>
-              <div class="col s12 m6 l8 banner-title">
-                <h1>{{ site.title }}</h1> 
-                <h3 class="subtitle">{{ site.description }}</h3>
-              </div>
-          </div>
-        </div>
+  {% include sidebar.html %}
 
-        <nav id="menu" class="col s12">
-          <div class="nav-wrapper">
-            <a
-              href="#!"
-              class="sidenav-trigger brand-logo right hide-on-med-and-up"
-              data-target="slide-out"
-            >
-              <i class="material-icons">menu</i>
-            </a>  
-            <ul class="left hide-on-small-and-down">
-              {% for entry in site.data.menu.links %}
-                <li>
-                  <a href="{{ entry.url }}">
-                    {{ entry.label }}
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
-  
-          </div>
-        </nav>
+  {% include header.html %}
 
-      <ul id="slide-out" class="sidenav">
-        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+  <div id="content-wrapper">
+    <div class="mui-container">
+      {{ content }}
+    </div>
+  </div>
 
-        <li><div class="divider"></div></li>
+  {% include footer.html %}
 
-        {% for entry in site.data.menu.links %}
-          <li>
-            <a href="{{ entry.url }}">
-              <i class="material-icons">{{ entry.icon }}</i>
-              {{ entry.label }}
-            </a>
-          </li>
-        {% endfor %}
+  {% include analytics.html %}
 
-        <li><div class="divider"></div></li>
-
-        {% for entry in site.data.social.networks %}
-          <li>
-            <a href="{{ entry.url }}">
-              <i class="material-icons">{{ entry.icon }}</i>
-              {{ entry.label }}
-            </a>
-          </li>
-          {% endfor%}
-      </ul>
-
-    </header>
-
-    <main id="content">
-      <p>content here</p>
-      <p>content here</p>
-
-      <div class="fixed-action-btn">
-        <a
-          class="btn-floating btn-large sidenav-trigger"
-          data-target="slide-out"
-        >
-          <i class="large material-icons">share</i>
-        </a>
-        <ul>
-          {% for entry in site.data.social.networks %}
-          <li>
-            <a href="{{ entry.url }}" class="btn-floating">
-              <i class="material-icons">{{ entry.icon }}</i>
-            </a>
-          </li>
-          {% endfor%}
-        </ul>
-      </div>
-      
-    </main>
-
-    <footer class="page-footer">
-      <div class="container">
-        123
-      </div>
-      <div class="footer-copyright">
-        <p>Copyright &copy;2020 Jonathan Jolivald - Released under the MIT license</p>
-      </div>
-    </footer>
-
-
-  <script type="text/javascript" src="{{ '/assets/js/materialize.min.js' | relative_url }}"></script>
-  <script type="text/javascript">
-  M.AutoInit();
-  </script>
 </body>
 </html>
