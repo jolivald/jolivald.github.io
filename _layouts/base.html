@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="{{ site.description }}">
+  {% seo %}
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" type="text/css">
   <link href="{{ '/assets/css/style.css' | relative_url }}" rel="stylesheet" type="text/css">
@@ -14,41 +14,19 @@
   <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  <title>{{site.title}} - {{page.title}}</title>
 </head>
 <body>
 
-  <div id="sidedrawer" class="mui--no-user-select">
-    <!-- Side drawer content goes here -->
-    <img
-      src="{{ '/assets/images/profile.jpg' | relative_url }}"
-      class="profile-picture"
-      alt="profile picture"
-    />
-    <h1>Jonathan Jolivald</h1>
-    <h2>Personal portfolio</h2>
-    <div class="mui-divider"></div>
-  </div>
-  <header id="header">
-    <div class="mui-appbar mui--appbar-line-height">
-      <div class="mui-container-fluid">
-        <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
-        <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
-        <span class="mui--text-title mui--visible-xs-inline-block">Jonathan Jolivald</span>
-      </div>
-    </div>
-  </header>
+  {% include sidebar.html %}
+
+  {% include header.html %}
 
   <div id="content-wrapper">
     <!-- Main content goes here -->
+    {{ content }}
   </div>
 
-  <footer id="footer">
-    <div class="mui-container-fluid">
-      <br>
-      Made with ♥ by <a href="https://www.muicss.com">MUI</a>
-    </div>
-  </footer>
+  {% include footer.html %}
 
 </body>
 </html>

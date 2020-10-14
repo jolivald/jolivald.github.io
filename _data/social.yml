@@ -1,9 +1,5 @@
 networks:
 
-- label: Email
-  url: mailto:nospam@gmail.com
-  icon: email
-
 - label: LinkedIn
   url: https://www.linkedin.com/in/jonathan-jolivald/
   icon: link
@@ -11,3 +7,7 @@ networks:
 - label: Github
   url: https://github.com/jolivald
   icon: code
+
+- label: Email
+  url: mailto:nospam@gmail.com
+  icon: email
