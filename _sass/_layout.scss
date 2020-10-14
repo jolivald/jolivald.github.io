@@ -2,11 +2,16 @@
  * Body CSS
  */
  html,
+ body,
+ body * {
+  box-sizing: border-box; // ?
+ }
+ html,
  body {
    height: 100%;
-   background-color: #eee;
+   //background-color: #eee;
+   background-color: mui-color('grey', '200');
    font-size: 16px; // =1rem
-   box-sizing: border-box; // ?
  }
  
  html,
@@ -36,51 +41,74 @@
    position: fixed;
    top: 0;
    bottom: 0;
-   width: 200px;
-   width: 14.5rem;
-   left: -200px;
-   left: -14.5rem;
+   width: $sidebar-width;
+   left: -$sidebar-width;
    overflow: auto;
    z-index: 2;
    background-color: #fff;
    transition: transform 0.2s;
  }
  
- #content-wrapper {
+#content-wrapper {
+  box-sizing: content-box;
    min-height: 100%;
    overflow-x: hidden;
    margin-left: 0px;
    transition: margin-left 0.2s;
- 
+
+  // margin: 0 0 -$footer-height 0;
+  // padding: $navbar-height 2rem $footer-height;
+
    /* sticky bottom */
-   margin-bottom: -160px;
-   padding-bottom: 160px;
- }
+   //margin-bottom: -160px;
+   margin-bottom: -$footer-height;
+   //padding-bottom: 160px;
+   padding-bottom: $footer-height;
+   .mui-container {
+     margin-top: $navbar-height;
+     padding: 0 2rem;
+   }
+
+}
+
+@media (orientation: landscape) and (max-height: $x-mobile-breakpoint) {
+  #content-wrapper {
+    .mui-container {
+      margin-top: $mui-appbar-height-xs-landscape;
+    }
+  }
+}
+@media (min-width: $x-mobile-breakpoint) {
+  #content-wrapper {
+    .mui-container {
+      margin-top: $mui-appbar-height;
+    }
+  }
+}
+// ---8<---
  
  #footer {
    height: 160px;
+   height: $footer-height;
    margin-left: 0px;
    transition: margin-left 0.2s;
  }
  
  @media (min-width: 768px) {
    #header {
-     left: 14.5rem;
+     left: $sidebar-width;
    }
  
    #sidedrawer {
-     transform: translate(200px);
-     transform: translate(14.5rem);
+     transform: translate($sidebar-width);
    }
  
    #content-wrapper {
-     margin-left: 200px;
-     margin-left: 14.5rem;
+     margin-left: $sidebar-width;
    }
  
    #footer {
-     margin-left: 200px;
-     margin-left: 14.5rem;
+     margin-left: $sidebar-width;
    }
  
    body.hide-sidedrawer #header {
@@ -105,8 +133,7 @@
   * Toggle Side drawer
   */
  #sidedrawer.active {
-   transform: translate(200px);
-   transform: translate(14.5rem);
+   transform: translate($sidebar-width);
  }
  
  

@@ -28,6 +28,8 @@
 #sidedrawer-menu {
   list-style-type: none;
   padding: 0;
+  // overwrite mui button in sidebar menu
+  // used to keep ripple effect on press
   a.mui-btn {
     display: inline-block;
     line-height: 2.5rem;
@@ -49,4 +51,8 @@
 .material-icons {
   vertical-align: middle;
   margin: 0 0.5rem 0 0;
+}
+
+pre.highlight {
+  padding: 1rem 1rem;
 }
