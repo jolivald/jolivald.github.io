@@ -35,6 +35,11 @@
    left: 0;
    z-index: 2;
    transition: left 0.2s;
+   .mui-appbar {
+     .mui-container-fluid {
+       white-space: nowrap;
+     }
+   }
  }
  
  #sidedrawer {
@@ -92,6 +97,38 @@
    height: $footer-height;
    margin-left: 0px;
    transition: margin-left 0.2s;
+   p {
+    text-align: center;
+    font-style: italic;
+    padding-top: 1rem;
+    color: mui-color('grey', '300');
+   }
+   .mui-row.icons {
+    height: 4rem;
+    margin-top: 1rem;
+    text-align: center;
+    div {
+      height: 100%;
+      a.mui-btn {
+        display: block;
+        height: 100%;
+        margin: 0;
+        padding: 0.5rem 0 0;
+        background-color: transparent;
+        // padding-top: 1rem;
+        //border-radius: 0.25rem;
+        // &:hover {
+          //background-color: mui-color('blue', '700');
+          //box-shadow: 0 0 0.5rem inset mui-color('blue', '800');
+          /*
+$mui-primary-color:            mui-color('blue', '500') !default;
+$mui-primary-color-dark:       mui-color('blue', '700') !default;
+$mui-primary-color-light:      mui-color('blue', '100') !default;
+          */
+        //}
+      }
+    }
+   }
  }
  
  @media (min-width: 768px) {
