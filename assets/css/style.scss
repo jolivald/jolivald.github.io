@@ -1,31 +1,9 @@
 ---
 ---
 
-//$primary-color: #008900;
-//$secondary-color: darken($primary-color, 10%);
-/*
-@import "components/color-variables";
-@import "components/color-classes";
-@import "components/variables";
-@import "components/normalize";
-@import "components/global";
-@import "components/icons-material-design";
-@import "components/grid";
-@import "components/navbar";
-@import "components/buttons";
-@import "components/sidenav";
-@import "variables";
-@import "f-box";
-@import "portfolio";
-*/
+
 @import "components/icons-material-design";
 @import "mui-rem";
-//@import "rouge-base16-dark";
-//@import "github-theme.css";
-//@import "pygments-base16-tomorrow-dark.css";
-//@import "pygments-base16-default-dark.css";
-//@import "pygments-base16-monokai-dark.css";
-//@import "pygments-monokai.css";
 @import "pygments-tomorrow-night-eighties.css";
 @import
   "variables",  

@@ -56,3 +56,18 @@
 pre.highlight {
   padding: 1rem 1rem;
 }
+
+// style for about page only
+body.about-md {
+  #content-wrapper {
+    .mui-container {
+      img {
+        float: left;
+        margin: 0 1rem 1rem 0;
+      }
+      hr + * {
+        clear: both;
+      }
+    }
+  }
+}

@@ -1,8 +1,7 @@
 ---
 title: Homepage
-layout: base
 ---
-## Welcome to GitHub Pages
+## Welcome to my personal portfolio
 
 You can use the [editor on GitHub](https://github.com/jolivald/jolivald.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
