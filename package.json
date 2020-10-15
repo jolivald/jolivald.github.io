@@ -4,7 +4,7 @@
   "description": "Personal portfolio",
   "main": "gulpfile.js",
   "scripts": {
-    "post": "gulp createPost",
+    "make": "gulp make",
     "serve": "bundle exec jekyll serve"
   },
   "repository": {
