@@ -13,12 +13,32 @@
     <textarea name="message"></textarea>
     <label>Message</label>
   </div>
-  <button type="submit" class="mui-btn mui-btn--primary">
+
+  <div
+    class="g-recaptcha"
+    data-sitekey="6LdUsdcZAAAAAGnbgYsmFW4vMYpT5hjLm_EqFDTV"
+    data-size="compact"
+  ></div>
+
+  <button
+    type="submit"
+    class="g-recaptcha mui-btn mui-btn--primary"
+  >
     <i class="material-icons">email</i>
     Submit
   </button>
+
+
+
 </form>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <script type="text/javascript">
+
+function onSubmit(token) {
+  console.log('token', token);
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   const msg = document.createElement('p');
   const icon = document.createElement('i');
