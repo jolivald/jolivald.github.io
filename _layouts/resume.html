@@ -13,13 +13,15 @@
   id="embed-pdf"
   class="mui--z3"
   src="{{ '/assets/CV-Jolivald-Jonathan.pdf' | relative_url }}"
+  type="application/pdf"
 />
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
+  console.log('dom load');
   const embed = document.getElementById('embed-pdf');
-  window.addEventListener('resize', event => {
-    embed.height = Math.floor(embed.offsetWidth * Math.SQRT2);
-  });
+  const onResize = () => embed.height = Math.floor(embed.offsetWidth * Math.SQRT2);
+  window.addEventListener('resize', onResize);
+  onResize()
 });
 </script>
 {% endcapture %}

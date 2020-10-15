@@ -4,7 +4,7 @@ networks:
   url: https://www.linkedin.com/in/jonathan-jolivald/
   icon: link
 
-- label: Github
+- label: GitHub
   url: https://github.com/jolivald
   icon: code
 

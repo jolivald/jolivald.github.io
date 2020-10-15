@@ -13,10 +13,17 @@
   <ul id="sidedrawer-menu" class="">
     {% for entry in site.data.menu.links %}
       <li>
+        {% if page.url contains entry.url %}
+        <a href="{{ entry.url }}" class="mui-btn active" disabled>
+          <i class="material-icons">{{ entry.icon }}</i>
+          {{ entry.label }}
+        </a>
+        {% else %}
         <a href="{{ entry.url }}" class="mui-btn">
           <i class="material-icons">{{ entry.icon }}</i>
           {{ entry.label }}
         </a>
+        {% endif %}
       </li>
     {% endfor %}
     <div class="mui-divider"></div>

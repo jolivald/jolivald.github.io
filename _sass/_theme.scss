@@ -45,6 +45,11 @@
       box-shadow: none;
       background-color: mui-color('grey', '200');
     }
+    &.active {
+      font-weight: 700;
+      cursor: default;
+      background-color: mui-color('grey', '200');
+    }
     .material-icons {
       margin: 0 0.5rem 0 0;
     }
@@ -83,11 +88,15 @@ body.about-md {
   #content-wrapper {
     .mui-container {
       img {
-        float: left;
-        margin: 0 1rem 1rem 0;
+        //float: left;
+        // margin: 0 1rem 1rem 0;
+        margin: 0 0 1rem;
       }
-      hr + * + * {
+      /*hr + * + * {
         clear: both;
+      }*/
+      .mui-btn {
+        margin-bottom: 1rem;
       }
     }
   }
