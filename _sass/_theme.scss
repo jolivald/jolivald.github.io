@@ -58,3 +58,15 @@ body.contact-md {
     margin: 1rem 0;
   }
 }
+
+// style for posts listing page
+body.posts-md {
+  .mui-row {
+  height: 12.5rem;
+    .mui-col-xs-12 {
+    .mui-panel {
+      height: 100%;
+    }
+  }
+  }
+}

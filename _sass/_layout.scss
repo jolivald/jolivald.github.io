@@ -28,12 +28,13 @@
     padding: 0 2rem;
     h2 {
       margin-bottom: 1rem;
-      &.page-title {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-        margin-bottom: 1.5rem;
-        padding-bottom: 0.5rem;
-        font-variant: small-caps;
-      }
+      
+    }
+    .page-title {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      font-variant: small-caps;
     }
   }
 }

@@ -1,5 +1,6 @@
 title: Jonathan Jolivald
 description: Personal portfolio
+permalink: /:categories/:slug
 github: [metadata]
 google_analytics: UA-180322847-1
 highlighter: rouge

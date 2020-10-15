@@ -4,6 +4,10 @@ links:
   url: /index
   icon: home
 
+- label: Posts
+  url: /posts
+  icon: list
+
 - label: About me
   url: /about
   icon: perm_identity

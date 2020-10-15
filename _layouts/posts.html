@@ -1,0 +1,23 @@
+{% capture email_form %}
+{{ content }}
+
+{% for post in site.posts %}
+  <div class="mui-panel">
+    <h3>
+      <a href="{{ post.url }}">
+        <i class="material-icons">article</i>
+        {{ post.title }}
+      </a>
+    </h3>
+    <p>{{ post.excerpt }}</p>
+    <p class="mui--text-right">
+      <a href="{{ post.url }}">
+        <i class="material-icons">navigate_next</i>
+        Read more
+      </a>
+    </p>
+  </div>
+{% endfor %}
+
+{% endcapture %}
+{% include layout.html content=email_form %}
