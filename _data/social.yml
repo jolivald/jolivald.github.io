@@ -9,5 +9,5 @@ networks:
   icon: code
 
 - label: Email
-  url: mailto:nospam@gmail.com
+  url: /contact
   icon: email

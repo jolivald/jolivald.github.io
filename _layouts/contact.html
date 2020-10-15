@@ -1,0 +1,19 @@
+{% capture email_form %}
+{{ content }}
+<form class="mui-form" action="https://formspree.io/f/xzbkekez" method="POST">
+  <div class="mui-textfield mui-textfield--float-label">
+    <input type="text" name="name">
+    <label>Name</label>
+  </div>
+  <div class="mui-textfield mui-textfield--float-label">
+    <input type="email" name="_replyTo">
+    <label>Email</label>
+  </div>
+  <div class="mui-textfield mui-textfield--float-label">
+    <textarea></textarea>
+    <label>Message</label>
+  </div>
+  <button type="submit" class="mui-btn mui-btn--primary">Submit</button>
+</form>
+{% endcapture %}
+{% include layout.html content=email_form %}
