@@ -1,69 +1,9 @@
-#sidedrawer {
-  overflow-x: hidden;
-  .profile-picture {
-    height: 12.5rem;
-    width: 12.5rem;
-    margin: 1rem 1rem 0;
-    clip-path: circle(50%);
-    transition: all 0.5s;
-    &:hover {
-      clip-path: circle(72%);
-    }
-  }
-  h1,
-  h2 {
-    margin: 0;
-    text-align: center;
-  }
-  h2 {
-    font-variant: small-caps;
-    margin-bottom: 1rem;
-    color: mui-color('grey', '700');
-  }
-  .mui-divider {
-    margin: 1rem 0;
-  }
-}
+/* gdpr dialog
+#gdpr-container {
+  z-index: 5;
+}*/
 
-#sidedrawer-menu {
-  list-style-type: none;
-  padding: 0;
-  // overwrite mui button in sidebar menu
-  // used to keep ripple effect on press
-  a.mui-btn {
-    display: inline-block;
-    line-height: 2.5rem;
-    height: 2.5rem;
-    width: 100%;
-    margin: 0;
-    padding: 0 0 0 2rem;
-    text-align: left;
-    text-transform: none;
-    color: $mui-link-font-color;
-    &:hover {
-      //text-decoration: none;
-      box-shadow: none;
-      background-color: mui-color('grey', '200');
-    }
-    &.active {
-      font-weight: 700;
-      cursor: default;
-      background-color: mui-color('grey', '200');
-    }
-    .material-icons {
-      margin: 0 0.5rem 0 0;
-    }
-  }
-}
-
-#content-wrapper {
-  .mui-container {
-    max-width: 80ch;
-    h2 {
-      margin-bottom: 1rem;
-    }
-  }
-}
+// floating action button
 .mui-btn--fab {
   position: sticky;
   bottom: 1rem;
@@ -71,10 +11,15 @@
   margin: 1rem 1rem;
 }
 
+// material icon font
 .material-icons {
+  // This is needed for some mobile phones to display the Google Icon font properly
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'liga';
   vertical-align: middle;
 }
 
+// syntax hightlighting box
 div.highlight {
   @extend .mui--z3;
   overflow-x: auto;
@@ -88,13 +33,8 @@ body.about-md {
   #content-wrapper {
     .mui-container {
       img {
-        //float: left;
-        // margin: 0 1rem 1rem 0;
         margin: 0 0 1rem;
       }
-      /*hr + * + * {
-        clear: both;
-      }*/
       .mui-btn {
         margin-bottom: 1rem;
       }
@@ -105,7 +45,6 @@ body.about-md {
 // style for resume page only
 body.resume-md {
   .mui-container {
-    //height: 100vh;
     embed {
       width: 100%;
       margin-bottom: 1rem;

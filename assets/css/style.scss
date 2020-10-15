@@ -4,10 +4,11 @@
 $mui-use-rem: true;
 
 @import "mui";
-@import "components/icons-material-design";
 @import "pygments-tomorrow-night-eighties.css";
 @import
-  "variables",  
+  "variables",
+  "globals",
+  "sidebar",
   "layout",
   "theme"
 ;

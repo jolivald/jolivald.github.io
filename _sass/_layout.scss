@@ -1,87 +1,76 @@
-/**
- * Body CSS
- */
- html,
- body,
- body * {
-  box-sizing: border-box;
- }
- html,
- body {
-   height: 100%;
-   background-color: mui-color('grey', '200');
-   font-size: 16px;
-   font-family:
-    Roboto,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    "Helvetica Neue", Arial,
-    "Noto Sans",
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji",
-    sans-serif;
- }
+// navbar
+#header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  transition: left 0.2s;
+  .mui-appbar {
+    .mui-container-fluid {
+      white-space: nowrap;
+    }
+  }
+}
  
- html,
- body,
- input,
- textarea,
- button {
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
-   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
- }
- 
- 
- /**
-  * Layout CSS
-  */
- #header {
-   position: fixed;
-   top: 0;
-   right: 0;
-   left: 0;
-   z-index: 2;
-   transition: left 0.2s;
-   .mui-appbar {
-     .mui-container-fluid {
-       white-space: nowrap;
-     }
-   }
- }
- 
- #sidedrawer {
-   position: fixed;
-   top: 0;
-   bottom: 0;
-   width: $sidebar-width;
-   left: -$sidebar-width;
-   overflow: auto;
-   z-index: 2;
-   background-color: #fff;
-   transition: transform 0.2s;
- }
- 
+// page content
 #content-wrapper {
   box-sizing: content-box;
-   min-height: 100%;
-   overflow-x: hidden;
-   margin-left: 0px;
-   transition: margin-left 0.2s;
+  min-height: 100%;
+  overflow-x: hidden;
+  margin-left: 0px;
+  transition: margin-left 0.2s;
+  margin-bottom: -$footer-height;
+  padding-bottom: $footer-height;
+  .mui-container {
+    max-width: 80ch;
+    margin-top: $mui-appbar-height-xs-portrait;
+    padding: 0 2rem;
+    h2 {
+      margin-bottom: 1rem;
+      &.page-title {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        font-variant: small-caps;
+      }
+    }
+  }
+}
 
-  // margin: 0 0 -$footer-height 0;
-  // padding: $navbar-height 2rem $footer-height;
-
-   /* sticky bottom */
-   //margin-bottom: -160px;
-   margin-bottom: -$footer-height;
-   //padding-bottom: 160px;
-   padding-bottom: $footer-height;
-   .mui-container {
-     margin-top: $navbar-height;
-     padding: 0 2rem;
+// page footer
+#footer {
+  height: 160px;
+  height: $footer-height;
+  margin-left: 0px;
+  transition: margin-left 0.2s;
+  color: #fff;
+  background-color: #0288D1;
+  a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  p {
+   text-align: center;
+   font-style: italic;
+   padding-top: 1rem;
+   color: mui-color('grey', '300');
+  }
+  .mui-row.icons {
+   height: 4rem;
+   margin-top: 1rem;
+   text-align: center;
+   div {
+     height: 100%;
+     a.mui-btn {
+       display: block;
+       height: 100%;
+       margin: 0;
+       padding: 0.5rem 0 0;
+       background-color: transparent;
+     }
    }
-
+  }
 }
 
 @media (orientation: landscape) and (max-height: $x-mobile-breakpoint) {
@@ -91,6 +80,7 @@
     }
   }
 }
+
 @media (min-width: $x-mobile-breakpoint) {
   #content-wrapper {
     .mui-container {
@@ -98,116 +88,31 @@
     }
   }
 }
-// ---8<---
  
- #footer {
-   height: 160px;
-   height: $footer-height;
-   margin-left: 0px;
-   transition: margin-left 0.2s;
-   p {
-    text-align: center;
-    font-style: italic;
-    padding-top: 1rem;
-    color: mui-color('grey', '300');
-   }
-   .mui-row.icons {
-    height: 4rem;
-    margin-top: 1rem;
-    text-align: center;
-    div {
-      height: 100%;
-      a.mui-btn {
-        display: block;
-        height: 100%;
-        margin: 0;
-        padding: 0.5rem 0 0;
-        background-color: transparent;
-        // padding-top: 1rem;
-        //border-radius: 0.25rem;
-        // &:hover {
-          //background-color: mui-color('blue', '700');
-          //box-shadow: 0 0 0.5rem inset mui-color('blue', '800');
-          /*
-$mui-primary-color:            mui-color('blue', '500') !default;
-$mui-primary-color-dark:       mui-color('blue', '700') !default;
-$mui-primary-color-light:      mui-color('blue', '100') !default;
-          */
-        //}
-      }
-    }
-   }
- }
+@media (min-width: $mui-screen-md-min) { // 768px
+  #header {
+    left: $sidebar-width;
+  }
+  #sidedrawer {
+    transform: translate($sidebar-width);
+  }
+  #content-wrapper {
+    margin-left: $sidebar-width;
+  }
+  #footer {
+    margin-left: $sidebar-width;
+  }
+  body.hide-sidedrawer #header {
+    left: 0;
+  }
+  body.hide-sidedrawer #sidedrawer {
+    transform: translate(0px);
+  }
+  body.hide-sidedrawer #content-wrapper {
+    margin-left: 0;
+  }
+  body.hide-sidedrawer #footer {
+    margin-left: 0;
+  }
+}
  
- @media (min-width: 768px) {
-   #header {
-     left: $sidebar-width;
-   }
- 
-   #sidedrawer {
-     transform: translate($sidebar-width);
-   }
- 
-   #content-wrapper {
-     margin-left: $sidebar-width;
-   }
- 
-   #footer {
-     margin-left: $sidebar-width;
-   }
- 
-   body.hide-sidedrawer #header {
-     left: 0;
-   }
- 
-   body.hide-sidedrawer #sidedrawer {
-     transform: translate(0px);
-   }
- 
-   body.hide-sidedrawer #content-wrapper {
-     margin-left: 0;
-   }
- 
-   body.hide-sidedrawer #footer {
-     margin-left: 0;
-   }
- }
- 
- 
- /**
-  * Toggle Side drawer
-  */
- #sidedrawer.active {
-   transform: translate($sidebar-width);
- }
- 
- 
- /**
-  * Header CSS
-  */
- .sidedrawer-toggle {
-   color: #fff;
-   cursor: pointer;
-   font-size: 20px;
-   line-height: 20px;
-   margin-right: 10px;
- }
- 
- .sidedrawer-toggle:hover {
-   color: #fff;
-   text-decoration: none;
- }
- 
- 
- /**
-  * Footer CSS
-  */
- #footer {
-   background-color: #0288D1;
-   color: #fff;
- }
- 
- #footer a {
-   color: #fff;
-   text-decoration: underline;
- }

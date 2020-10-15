@@ -13,7 +13,7 @@
   <ul id="sidedrawer-menu" class="">
     {% for entry in site.data.menu.links %}
       <li>
-        {% if page.url contains entry.url %}
+        {% if page.url contains entry.url or page.url == '/' and entry.url == '/index' %}
         <a href="{{ entry.url }}" class="mui-btn active" disabled>
           <i class="material-icons">{{ entry.icon }}</i>
           {{ entry.label }}

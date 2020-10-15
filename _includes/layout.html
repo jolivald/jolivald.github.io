@@ -27,13 +27,14 @@
 
   <div id="content-wrapper">
     <div class="mui-container">
+      <h2 class="page-title">{{ page.title }}</h2>
       {{ include.content | default: content }}
     </div>
     <div>
     </div>
   </div>
 
-  <a href="#top" title="Back to top" class="mui-btn mui-btn--fab mui-btn--primary">
+  <a href="#top" title="Back to top" class="mui-btn mui-btn--fab mui-btn--primary mui--z3">
     <i class="material-icons" style="margin: 0">arrow_upward</i>
   </a>
 
@@ -41,5 +42,40 @@
 
   {% include analytics.html %}
 
+<!-- GDPR conscent
+  <script src="https://unpkg.com/simple-gdpr@1.1.5/dist/simplegdpr.umd.js"></script>
+  <link href="https://unpkg.com/simple-gdpr@1.1.5/dist/simplegdpr.min.css" rel="stylesheet">
+  <script type="text/javascript">
+const gdpr = document.createElement('div');
+//document.cookie = '';
+const cookie = document.cookie
+  .split(';')
+  .reduce((acc, token) => {
+    const [key, value] = token.split('=');
+    acc[key] = value;
+    return acc;
+  }, {});
+console.log("cookie", cookie);
+if (true){//  } || !cookie || !cookie.rgpd){
+  const notice = new SimpleGDPR({
+    //link: 'https://github.com/jolivald/jolivald.github.io/blob/master/LICENSE',
+    link: null,
+    icons: true,
+    theme: 'material',
+    animation: 'slide',
+    float: 'top-right',
+    callback: () => {
+      document.cookie = 'rgpd=1';
+      notice.close();
+    },
+    openOnInit: true,
+    id: {
+      box: 'gdpr-container',
+      button: 'gdpr-button',
+    },
+  });
+}
+  </script>
+-->
 </body>
 </html>
