@@ -98,9 +98,15 @@ body.resume-md {
   .mui-container {
     //height: 100vh;
     embed {
-      height: 90vh;
       width: 100%;
       margin-bottom: 1rem;
     }
+  }
+}
+
+// style for contact page only
+body.contact-md {
+  .mui-btn[type="submit"] {
+    margin: 1rem 0;
   }
 }

@@ -1,0 +1,26 @@
+{% capture embed_resume %}
+{{ content }}
+<p>
+  Check out my resume online or <a
+    href="{{ '/assets/CV-Jolivald-Jonathan.pdf' | relative_url }}"
+  >
+    <i class="material-icons">get_app</i>
+    download it
+  </a>
+  directly.
+</p>
+<embed
+  id="embed-pdf"
+  class="mui--z3"
+  src="{{ '/assets/CV-Jolivald-Jonathan.pdf' | relative_url }}"
+/>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  const embed = document.getElementById('embed-pdf');
+  window.addEventListener('resize', event => {
+    embed.height = Math.floor(embed.offsetWidth * Math.SQRT2);
+  });
+});
+</script>
+{% endcapture %}
+{% include layout.html content=embed_resume %}
