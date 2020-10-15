@@ -20,7 +20,7 @@
   <![endif]-->
 </head>
 <body class="{{ page.name | slugify }}">
-
+  <a name="top"></a>
   {% include sidebar.html %}
 
   {% include header.html %}
@@ -29,7 +29,13 @@
     <div class="mui-container">
       {{ content }}
     </div>
+    <div>
+    </div>
   </div>
+
+  <a href="#top" title="Back to top" class="mui-btn mui-btn--fab mui-btn--primary">
+    <i class="material-icons" style="margin: 0">arrow_upward</i>
+  </a>
 
   {% include footer.html %}
 

@@ -3,7 +3,7 @@ title: About me
 ---
 ## About me
 
-![Profile picture](/assets/images/about.jpg)
+<img src="/assets/images/about.jpg" class="mui--z3" alt="Profile picture"/>
 
 Hello, my name is Jonathan and I'm passionate about computers since I was a child.
 

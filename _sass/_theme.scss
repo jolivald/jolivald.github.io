@@ -48,11 +48,25 @@
   }
 }
 
+#content-wrapper {
+  //position: relative;
+}
+.mui-btn--fab {
+  position: sticky;
+  bottom: 1rem;
+  left: 100%;
+  margin: 1rem 1rem;
+}
+
 .material-icons {
   vertical-align: middle;
   margin: 0 0.5rem 0 0;
 }
 
+div.highlight {
+  @extend .mui--z3;
+  overflow-x: auto;
+}
 pre.highlight {
   padding: 1rem 1rem;
 }
