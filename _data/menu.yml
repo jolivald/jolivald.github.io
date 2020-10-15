@@ -7,3 +7,7 @@ links:
 - label: About me
   url: /about
   icon: perm_identity
+
+- label: Resume
+  url: /resume
+  icon: description

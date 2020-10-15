@@ -61,13 +61,26 @@ pre.highlight {
 body.about-md {
   #content-wrapper {
     .mui-container {
+      max-width: 80ch;
       img {
         float: left;
         margin: 0 1rem 1rem 0;
       }
-      hr + * {
+      hr + * + * {
         clear: both;
       }
+    }
+  }
+}
+
+// style for resume page only
+body.resume-md {
+  .mui-container {
+    //height: 100vh;
+    embed {
+      height: 90vh;
+      width: 100%;
+      margin-bottom: 1rem;
     }
   }
 }

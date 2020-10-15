@@ -1,9 +1,10 @@
 ---
 ---
 
+$mui-use-rem: true;
 
+@import "mui";
 @import "components/icons-material-design";
-@import "mui-rem";
 @import "pygments-tomorrow-night-eighties.css";
 @import
   "variables",  
