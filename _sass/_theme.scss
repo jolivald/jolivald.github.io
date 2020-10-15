@@ -23,6 +23,7 @@
 div.highlight {
   @extend .mui--z3;
   overflow-x: auto;
+  margin-bottom: 1rem;
 }
 pre.highlight {
   padding: 1rem 1rem;
