@@ -4,3 +4,12 @@ permalink: /:categories/:slug
 github: [metadata]
 google_analytics: UA-180322847-1
 highlighter: rouge
+exclude:
+  - node_modules/*
+  - LICENSE
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - yarn.lock
+  - gulpfile.js

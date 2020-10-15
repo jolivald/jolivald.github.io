@@ -1,0 +1,25 @@
+{
+  "name": "jolivald.github.io",
+  "version": "1.0.0",
+  "description": "Personal portfolio",
+  "main": "gulpfile.js",
+  "scripts": {
+    "post": "gulp createPost",
+    "serve": "bundle exec jekyll serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jolivald/jolivald.github.io.git"
+  },
+  "author": "Jonathan Jolivald",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jolivald/jolivald.github.io/issues"
+  },
+  "homepage": "https://github.com/jolivald/jolivald.github.io#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-prompt": "^1.2.0",
+    "slugify": "^1.4.5"
+  }
+}
