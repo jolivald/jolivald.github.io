@@ -30,7 +30,7 @@ pre.highlight {
 }
 
 // style for about page only
-body.about-md {
+body.about-html {
   #content-wrapper {
     .mui-container {
       img {
@@ -44,7 +44,7 @@ body.about-md {
 }
 
 // style for resume page only
-body.resume-md {
+body.resume-html {
   .mui-container {
     embed {
       width: 100%;
@@ -54,14 +54,14 @@ body.resume-md {
 }
 
 // style for contact page only
-body.contact-md {
+body.contact-html {
   .mui-btn[type="submit"] {
     margin: 1rem 0;
   }
 }
 
 // style for posts listing page
-body.posts-md {
+body.posts-html {
   .mui-row {
   height: 12.5rem;
     .mui-col-xs-12 {

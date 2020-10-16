@@ -1,0 +1,51 @@
+---
+title: About me
+layout: default
+---
+<div class="mui-row">
+  <div class="mui-col-xs-12 mui-col-sm-5 mui-col-lg-4">
+    <img src="/assets/images/about.jpg" class="mui--z3" alt="Profile picture"/>
+  </div>
+  <div class="mui-col-xs-12 mui-col-sm-7 mui-col-lg-8">
+    <h3>Who I am</h3>
+    <p>Hello, my name is Jonathan and I'm a fullstack javascript developer.</p>
+    <p>Curious and autodidact, I like to think outside of the box and challenge myself.</p>
+    <hr class="mui--hidden-xs"/>
+    <a href="/resume" class="mui-btn mui-btn--primary">
+      <i class="material-icons">navigate_next</i>
+      Check out my resume
+    </a>
+  </div>
+</div>
+<h3>What I like</h3>
+<p>
+  Continuous learning is what makes me like the web most, with its abundance of creativity 
+  and innovations, it keeps me interested and motivated to stay up to the lastest standards.
+</p>
+<p>
+  I have a good technical culture, especially open source softwares, which helps me identify 
+  the right opportunities when evaluating new technologies.
+</p>
+
+<h3>What I do</h3>
+<p>
+</p>
+<a href="{% link projects.html %}" class="mui-btn mui-btn--primary">
+  <i class="material-icons">folder_open</i>
+  See my projects
+</a>
+<p>
+  I am currently looking for a full stack javascript developer job, if you are interested 
+  in my profile feel free to contact me.
+</p>
+
+<div class="mui-row">
+  {% for entry in site.data.social.networks %}
+  <div class="mui-col-xs-12 mui-col-md-4">
+    <a href="{{ entry.url }}" class="mui-btn" style="float: left; margin-right: 1rem">
+      <i class="material-icons">{{ entry.icon }}</i>
+      {{ entry.label }}
+    </a>
+  </div>
+  {% endfor %}
+</div>

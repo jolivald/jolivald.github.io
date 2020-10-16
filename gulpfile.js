@@ -16,24 +16,35 @@ const inquire = options => new Promise((resolve, reject) => {
   return stream;
 });
 
-const create = (type, title) => {
-  let name = title;
+const create = (type, title, ext) => {
+  const slug = slugify(title, { lower: true, strict: true });
   let base = '';
-  if (type === 'post'){
-    const date = (new Date).toISOString().slice(0, -14);
-    name = `${date}-${title}`;
-    base = '_posts/';
+  let path = slug;
+  let excerpt = true;
+  switch (type){
+    case 'post':
+      base = '_posts/';
+      path = `${(new Date).toISOString().slice(0, -14)}-${slug}`;
+      break;
+    case 'page':
+      base = '';
+      excerpt: false;
+      break;
+    case 'project':
+      base = 'projects/';
+      break;
   }
-  const slug = slugify(name, { lower: true, strict: true });
   const stream = through.obj();
   stream.write(new File({
     cwd: '/',
     base: `/${base}`,
-    path: `/${base}${slug}.md`,
+    path: `/${base}${path}.${ext}`,
     contents: Buffer.from(
 `---
-title: ${name}
+title: ${title}
 slug: ${slug}
+page_excerpts: ${excerpt}
+layout: default
 ---
 `)
   }));
@@ -46,7 +57,12 @@ const makeTask = async () => {
   const type = await inquire({
     type: 'list',
     message: 'What type of resource to make ?',
-    choices: ['page', 'post']
+    choices: ['post', 'page', 'project']
+  });
+  const ext = await inquire({
+    type: 'list',
+    message: 'Use HTML or Markdown ?',
+    choices: ['html', 'md']
   });
   const name = await inquire({
     type: 'input',
@@ -56,7 +72,7 @@ const makeTask = async () => {
     type: 'confirm',
     message: `Create ${type} ?`
   });
-  return confirm && create(type, name);
+  return confirm && create(type, name, ext);
 };
 
 const defaultTask = done => {

@@ -1,5 +1,7 @@
-{% capture embed_resume %}
-{{ content }}
+---
+title: Resume
+layout: default
+---
 <p>
   Check out my resume online or <a
     href="{{ '/assets/CV-Jolivald-Jonathan.pdf' | relative_url }}"
@@ -9,6 +11,7 @@
   </a>
   directly.
 </p>
+
 <embed
   id="embed-pdf"
   class="mui--z3"
@@ -17,12 +20,14 @@
 />
 <script type="text/javascript">
 window.addEventListener('load', () => {
-  console.log('dom load');
   const embed = document.getElementById('embed-pdf');
-  const onResize = () => embed.height = Math.floor(embed.offsetWidth * Math.SQRT2);
+  console.log('dom load', embed);
+  const onResize = () => {
+    embed.height = Math.floor(embed.offsetWidth * Math.SQRT2);
+    console.log('resized', embed.height, embed.offsetWidth);
+  };
   window.addEventListener('resize', onResize);
-  onResize()
+  onResize();
 });
 </script>
-{% endcapture %}
-{% include layout.html content=embed_resume %}
+

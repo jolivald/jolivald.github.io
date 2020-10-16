@@ -1,5 +1,8 @@
-{% capture email_form %}
-{{ content }}
+---
+title: Contact
+layout: default
+---
+<p>Use the form below to send me an email.</p>
 <form id="contact-form" class="mui-form" action="https://formspree.io/f/xzbkekez" method="POST">
   <div class="mui-textfield mui-textfield--float-label">
     <input type="text" name="name">
@@ -32,12 +35,7 @@
 
 </form>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
 <script type="text/javascript">
-
-function onSubmit(token) {
-  console.log('token', token);
-};
 
 document.addEventListener('DOMContentLoaded', () => {
   const msg = document.createElement('p');
@@ -78,5 +76,3 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-{% endcapture %}
-{% include layout.html content=email_form %}
